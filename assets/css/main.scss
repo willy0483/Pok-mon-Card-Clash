@@ -1,0 +1,16 @@
+@use "./variables" as var;
+@use "../js/modules/cardsView/cardsView" as cardsView;
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Playfair+Display:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var.$background;
+  font-family: "Roboto Mono", monospace;
+
+}
+
