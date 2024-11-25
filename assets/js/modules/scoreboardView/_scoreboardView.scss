@@ -1,0 +1,18 @@
+@use "../../../css/variables" as var;
+
+
+
+.scoreboardContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    h2{
+        font-size: 3rem;
+        font-weight: 700;
+        color: var.$text;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: black;
+    }
+}

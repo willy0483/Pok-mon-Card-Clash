@@ -1,5 +1,9 @@
 export const app = document.getElementById("app");
 
-import { makeCardView } from "./modules/cardsView/cardsView.js";
+import { makeFiveCardView } from "./modules/fiveCardsView/fiveCardsView.js";
 
-makeCardView();
+export function startGame() {
+  makeFiveCardView();
+}
+
+startGame();

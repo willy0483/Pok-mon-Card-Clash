@@ -1,0 +1,18 @@
+@use "../../../css/variables" as var;
+
+.duelContainer{
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    .card{
+        max-width: 500px;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}

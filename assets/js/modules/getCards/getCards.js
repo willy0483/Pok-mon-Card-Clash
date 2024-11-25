@@ -3,33 +3,36 @@ import { apiUrl, apiKey } from "../../credentials.js";
 // Function to get cards from the API
 export const getCards = async () => {
   try {
-    const respose = await fetch(apiUrl, {
-      headers: {
-        "X-Api-Key": apiKey,
-      },
-    });
-    if (!respose.ok) {
-      throw error;
+    const response = await fetch(
+      `${apiUrl}?pageSize=10&page=${Math.floor(Math.random() * 100)}`,
+      {
+        headers: {
+          "X-Api-Key": apiKey,
+        },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
     }
-    const data = await respose.json();
+    const data = await response.json();
     return data;
   } catch (error) {
-    console.error(error);
+    console.error("Fetch error:", error);
   }
 };
 
 export const getDualCards = async () => {
   const cards = await getCards();
+  const cardData = cards.data;
+  const selectedIndices = new Set();
 
-  const randomCard = Math.floor(Math.random() * cards.data.length + 1);
-  const randomCard2 = Math.floor(Math.random() * cards.data.length + 1);
-
-  if (randomCard === randomCard2) {
-    return getDualCards();
+  while (selectedIndices.size < 5) {
+    const randomIndex = Math.floor(Math.random() * cardData.length);
+    selectedIndices.add(randomIndex);
   }
-  console.log(cards.data[randomCard], cards.data[randomCard2]);
+  const selectedCards = Array.from(selectedIndices).map(
+    (index) => cardData[index]
+  );
 
-  let myCards = [cards.data[randomCard], cards.data[randomCard2]];
-
-  return myCards;
+  return selectedCards;
 };

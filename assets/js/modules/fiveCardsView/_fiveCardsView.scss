@@ -1,0 +1,80 @@
+@use "../../../css/variables" as var;
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 90%;
+  height: 100vh;
+  .myHand {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 57%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 2rem 0 4rem 0;
+  }
+
+  .card {
+    z-index: 1;
+    border-radius: 1rem;
+    width: 14%;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: -7%;
+    img {
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+    }
+    &:hover {
+      z-index: 10;
+        img{
+          animation: scale-tilt 1s ease forwards;
+        }
+      }
+
+    
+  }
+
+  .card:nth-child(1) {
+    left: -10%;
+    transform: rotate(-15deg);
+    top: 40px;
+  }
+
+  .card:nth-child(2) {
+    left: -5%;
+    transform: rotate(-7.5deg);
+    top: 10px;
+  }
+
+  .card:nth-child(3) {
+    left: 0;
+    transform: rotate(0deg);
+  }
+
+  .card:nth-child(4) {
+    left: 5%;
+    transform: rotate(7.5deg);
+    top: 10px;
+  }
+
+  .card:nth-child(5) {
+    left: 10%;
+    transform: rotate(15deg);
+    top :40px;
+  }
+}
+
+
+
+@keyframes scale-tilt {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(0deg); }
+  75% { transform: scale(1.1) rotate(5deg); }
+  100% { transform: scale(1.1) rotate(0deg); }
+}

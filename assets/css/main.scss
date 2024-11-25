@@ -1,5 +1,8 @@
 @use "./variables" as var;
 @use "../js/modules/cardsView/cardsView" as cardsView;
+@use "../js/modules/fiveCardsView/fiveCardsView" as fiveCardsView;
+@use "../js/modules/chosenCard/chosenCard" as chosenCard;
+@use "../js/modules/scoreboardView/scoreboardView" as scoreboardView;
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Playfair+Display:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 * {
@@ -7,10 +10,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  background-color: var.$background;
+  background-color: #37394b;
   font-family: "Roboto Mono", monospace;
-
+  background-image: url(../image/wp10311653-pokemon-landscape-wallpapers.jpg);
+  background-size: cover;
+  backdrop-filter: blur(5px);
+  background-attachment: fixed;
 }
 

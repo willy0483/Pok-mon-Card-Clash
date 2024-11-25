@@ -21,6 +21,114 @@
   align-items: flex-start;
 }
 
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 90%;
+  height: 100vh;
+}
+.cardsContainer .myHand {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 1rem;
+  left: 57%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 2rem 0 4rem 0;
+}
+.cardsContainer .card {
+  z-index: 1;
+  border-radius: 1rem;
+  width: 14%;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: -7%;
+}
+.cardsContainer .card img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+.cardsContainer .card:hover {
+  z-index: 10;
+}
+.cardsContainer .card:hover img {
+  animation: scale-tilt 1s ease forwards;
+}
+.cardsContainer .card:nth-child(1) {
+  left: -10%;
+  transform: rotate(-15deg);
+  top: 40px;
+}
+.cardsContainer .card:nth-child(2) {
+  left: -5%;
+  transform: rotate(-7.5deg);
+  top: 10px;
+}
+.cardsContainer .card:nth-child(3) {
+  left: 0;
+  transform: rotate(0deg);
+}
+.cardsContainer .card:nth-child(4) {
+  left: 5%;
+  transform: rotate(7.5deg);
+  top: 10px;
+}
+.cardsContainer .card:nth-child(5) {
+  left: 10%;
+  transform: rotate(15deg);
+  top: 40px;
+}
+
+@keyframes scale-tilt {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(0deg);
+  }
+}
+.duelContainer {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+}
+.duelContainer .card {
+  max-width: 500px;
+}
+.duelContainer .card img {
+  width: 100%;
+  height: auto;
+}
+
+.scoreboardContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.scoreboardContainer h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f4eae1;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +136,11 @@
 }
 
 body {
-  background-color: #0a0604;
+  background-color: #37394b;
   font-family: "Roboto Mono", monospace;
+  background-image: url(../image/wp10311653-pokemon-landscape-wallpapers.jpg);
+  background-size: cover;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-attachment: fixed;
 }/*# sourceMappingURL=main.css.map */
